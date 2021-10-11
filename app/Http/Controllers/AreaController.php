@@ -15,7 +15,7 @@ class AreaController extends Controller
      */
     public function index()
     {
-        $areas = Area::with('level')->get();
+        $areas = Area::with('level')->orderBy('id', 'ASC')->get();
 
         return response()->json($areas, 200);
     }

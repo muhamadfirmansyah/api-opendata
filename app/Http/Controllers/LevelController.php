@@ -14,7 +14,7 @@ class LevelController extends Controller
      */
     public function index()
     {
-        $levels = Level::withCount("areas")->get();
+        $levels = Level::withCount("areas")->orderBy('id', 'ASC')->get();
         return response()->json($levels, 200);
     }
 
@@ -67,7 +67,7 @@ class LevelController extends Controller
         return response()->json([
             "message" => "success",
             "error" => false
-        ], 201);
+        ], 200);
     }
 
     /**

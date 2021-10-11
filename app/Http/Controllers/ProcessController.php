@@ -43,7 +43,7 @@ class ProcessController extends Controller
             $response[] = [
                 "id" => $place->id,
                 "name" => $place->name,
-                "category_id" => 1,
+                "category" => $place->category->name,
                 "city_name" => $place->city->name,
                 "district_name" => $place->district->name,
                 "latitude" => $place->latitude,

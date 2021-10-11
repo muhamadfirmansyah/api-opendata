@@ -14,7 +14,7 @@ class PlaceController extends Controller
      */
     public function index()
     {
-        $places = Place::with('category', 'city', 'district')->get();
+        $places = Place::with('category', 'city', 'district')->orderBy('id', 'ASC')->get();
 
         return response()->json($places, 200);
     }
